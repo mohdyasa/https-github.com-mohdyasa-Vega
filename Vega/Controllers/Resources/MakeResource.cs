@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Vega.Models;
 
-namespace Vega.Models
+namespace Vega.Controllers.Resources
 {
-    public class Make
+    public class MakeResource
     {
         public int Id { get; set; }
-        [Required]
+
         public string Name { get; set; }
-        public ICollection<Model> Models { get; set; }
-        public Make()
+        public ICollection<ModelResource> Models { get; set; }
+        public MakeResource()
         {
-            Models = new Collection<Model>();
+            Models = new Collection<ModelResource>();
         }
     }
 }

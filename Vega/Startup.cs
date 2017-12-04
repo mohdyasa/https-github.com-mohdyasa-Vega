@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Vega.Persistance;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
 
 namespace Vega
 {
@@ -27,6 +28,7 @@ namespace Vega
             var connection = @"Data Source=.;Initial Catalog=Vega;Integrated Security=True";
             services.AddMvc();
             services.AddDbContext<VegaDbContext>(options => options.UseSqlServer(connection));
+            services.AddAutoMapper();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
